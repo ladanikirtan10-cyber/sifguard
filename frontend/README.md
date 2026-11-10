@@ -2,7 +2,12 @@
 
 Next.js frontend application for the SIFGUARD AI Safety Intelligence Platform.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-sifguard--five.vercel.app-0070F3?style=for-the-badge&logo=vercel&logoColor=white)](https://sifguard-five.vercel.app/)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ladanikirtan10-cyber/sifguard&root-directory=frontend)
+
+> 🚀 **Live Demo**: [https://sifguard-five.vercel.app/](https://sifguard-five.vercel.app/)
+
+---
 
 ## 🚀 Quick Start
 
