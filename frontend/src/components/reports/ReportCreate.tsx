@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { ArrowLeft, Mic, Sparkles } from "lucide-react"
 import axios from "axios"
+import { API_BASE_URL } from "@/lib/api"
 
 export function ReportCreate() {
   const router = useRouter()
@@ -43,7 +44,7 @@ export function ReportCreate() {
       originalLanguage: formData.originalLanguage === "Auto Detect" ? "English" : formData.originalLanguage
     }
 
-    axios.post("http://127.0.0.1:8000/api/reports", payload)
+    axios.post(`${API_BASE_URL}/api/reports`, payload)
       .then(res => {
         setLoading(false)
         router.push(`/reports/${res.data.id}`)

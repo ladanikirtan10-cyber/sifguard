@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { CheckSquare, Clock, ArrowRight } from "lucide-react"
 import axios from "axios"
+import { API_BASE_URL } from "@/lib/api"
 import Link from "next/link"
 
 export function ActionsList() {
@@ -17,7 +18,7 @@ export function ActionsList() {
   }, [])
 
   const fetchActions = () => {
-    axios.get("http://127.0.0.1:8000/api/actions")
+    axios.get(`${API_BASE_URL}/api/actions`)
       .then(res => {
         setActions(res.data)
         setLoading(false)
@@ -29,7 +30,7 @@ export function ActionsList() {
   }
 
   const updateStatus = (id: number, newStatus: string) => {
-    axios.patch(`http://127.0.0.1:8000/api/actions/${id}?status=${newStatus}`)
+    axios.patch(`${API_BASE_URL}/api/actions/${id}?status=${newStatus}`)
       .then(() => fetchActions())
       .catch(err => console.error(err))
   }

@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, BrainCircuit, ShieldAlert, CheckCircle2, Clock, MapPin, Activity, Shield, AlertTriangle } from "lucide-react"
 import axios from "axios"
+import { API_BASE_URL } from "@/lib/api"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -23,7 +24,7 @@ export function ReportDetail() {
   }, [id])
 
   const fetchReport = () => {
-    axios.get(`http://127.0.0.1:8000/api/reports/${id}`)
+    axios.get(`${API_BASE_URL}/api/reports/${id}`)
       .then(res => {
         setReport(res.data)
         setLoading(false)
@@ -44,7 +45,7 @@ export function ReportDetail() {
       setTimeout(() => setAnalysisSteps(3), 1600),
       setTimeout(() => setAnalysisSteps(4), 2400),
       setTimeout(() => {
-        axios.post(`http://127.0.0.1:8000/api/reports/${id}/analyze`)
+        axios.post(`${API_BASE_URL}/api/reports/${id}/analyze`)
           .then(res => {
             setReport({...report, analysis: res.data})
             setAnalyzing(false)

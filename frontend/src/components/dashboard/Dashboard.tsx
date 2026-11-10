@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ShieldAlert, Activity, CheckSquare, AlertTriangle, AlertOctagon, CheckCircle2 } from "lucide-react"
 import { motion } from "framer-motion"
 import axios from "axios"
+import { API_BASE_URL } from "@/lib/api"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell } from 'recharts';
 
 export function Dashboard() {
@@ -19,7 +20,7 @@ export function Dashboard() {
 
   useEffect(() => {
     // In demo environment, we will fetch from our local backend, or use mock if unavailable
-    axios.get("http://127.0.0.1:8000/api/dashboard/summary")
+    axios.get(`${API_BASE_URL}/api/dashboard/summary`)
       .then(res => {
         setSummary(res.data);
         setLoading(false);

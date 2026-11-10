@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { BrainCircuit, Send, User, Bot, Sparkles } from "lucide-react"
 import axios from "axios"
+import { API_BASE_URL } from "@/lib/api"
 import { motion } from "framer-motion"
 
 export function Copilot() {
@@ -33,7 +34,7 @@ export function Copilot() {
     setQuery("")
     setLoading(true)
 
-    axios.post(`http://127.0.0.1:8000/api/assistant/query?query=${encodeURIComponent(query)}`)
+    axios.post(`${API_BASE_URL}/api/assistant/query?query=${encodeURIComponent(query)}`)
       .then(res => {
         setMessages([...newMessages, { role: "assistant", content: res.data.answer }])
         setLoading(false)

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Search, Plus, Filter, Eye } from "lucide-react"
 import axios from "axios"
+import { API_BASE_URL } from "@/lib/api"
 import Link from "next/link"
 
 export function ReportsList() {
@@ -14,7 +15,7 @@ export function ReportsList() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/reports")
+    axios.get(`${API_BASE_URL}/api/reports`)
       .then(res => {
         setReports(res.data)
         setLoading(false)
