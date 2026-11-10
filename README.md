@@ -1,6 +1,22 @@
 # SIFGUARD - AI-Powered Safety Intelligence Platform
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ladanikirtan10-cyber/sifguard&root-directory=frontend)
+
 SIFGUARD is an AI-driven industrial safety intelligence system designed to detect Serious Injury and Fatality (SIF) precursors, analyze incident reports, evaluate hazard risks, and recommend actionable corrective controls.
+
+---
+
+## 🌐 Deploy to Vercel
+
+Click the badge below to deploy the frontend to Vercel with the repository and root directory pre-configured:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ladanikirtan10-cyber/sifguard&root-directory=frontend)
+
+- **GitHub Repository**: [https://github.com/ladanikirtan10-cyber/sifguard](https://github.com/ladanikirtan10-cyber/sifguard)
+- **Root Directory**: `frontend`
+- **Framework Preset**: Next.js
+- **Environment Variables (Optional)**:
+  - `NEXT_PUBLIC_API_URL`: Your hosted FastAPI backend URL (e.g. on Render, Railway). If not provided, the frontend will automatically use built-in safety intelligence fallback data for all views.
 
 ---
 
